@@ -16,7 +16,7 @@ function App() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       <Route path="/verify" element={<PhoneLoginPage/>} />
-      <Route path="/dashboard" element={<DashboardFlowchart/>} />
+      <Route path="/dashboard" element= {<DashboardFlowchart/>} />
 
     </Routes>
   );
