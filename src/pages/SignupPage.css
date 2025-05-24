@@ -1,0 +1,268 @@
+/* Background with animated neon gradient */
+.particles-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(270deg, #8a2be2, #4b0082, #ff00ff, #00ffff);
+  background-size: 800% 800%;
+  animation: neonGradient 15s ease infinite;
+  filter: blur(90px);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+@keyframes neonGradient {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+.signup-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: #120136;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.signup-card {
+  background: rgba(30, 0, 60, 0.95);
+  border-radius: 30px;
+  padding: 50px 60px;
+  width: 420px;
+  max-width: 90vw;
+  box-shadow:
+    0 0 25px #bf00ff,
+    0 0 60px #ff00ffaa,
+    inset 0 0 15px #8a2be2;
+  color: #eee;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.signup-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 35px #ff4dff,
+    0 0 90px #ff00ffdd,
+    inset 0 0 30px #aa44ff;
+}
+
+.form-title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #ff00ff;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #bb00bb,
+    0 0 40px #ff33ff;
+  user-select: none;
+  animation: flickerTitle 3s infinite alternate;
+}
+
+@keyframes flickerTitle {
+  0%, 100% { opacity: 1; text-shadow: 0 0 30px #ff00ff, 0 0 40px #ff33ff;}
+  50% { opacity: 0.85; text-shadow: 0 0 10px #cc00cc, 0 0 15px #bb00bb;}
+}
+
+.signup-wow-form {
+  text-align: left;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 18px 16px 18px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #6400ff;
+  color: #eee;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  outline: none;
+  transition: border-color 0.4s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.input-group input:focus {
+  border-bottom-color: #ff33ff;
+  box-shadow: 0 0 10px #ff33ff;
+}
+
+.input-group label {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  font-size: 1.05rem;
+  color: #d9aaffcc;
+  font-weight: 700;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -12px;
+  font-size: 0.75rem;
+  color: #ff00ff;
+  text-shadow: 0 0 8px #ff00ff;
+}
+
+.focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff00ff, #b300b3);
+  border-radius: 3px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+}
+
+.input-group input:focus ~ .focus-border {
+  transform: scaleX(1);
+}
+
+.password-hint {
+  font-size: 0.9rem;
+  color: #bb99ffaa;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+.captcha-wrap {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Sign up button */
+.btn-signup {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #fff;
+  background: #6a00ff;
+  background-image: linear-gradient(45deg, #ff00ff, #6a00ff);
+  box-shadow: 0 0 12px #ff00ffaa;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn-signup.disabled {
+  background: #4c004c99;
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #aaa;
+  letter-spacing: normal;
+}
+
+.btn-signup.active:hover {
+  background-image: linear-gradient(45deg, #ff33ff, #9f00ff);
+  box-shadow:
+    0 0 15px #ff00ff,
+    0 0 25px #ff00ffcc,
+    0 0 40px #ff00ffdd;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Google button */
+.btn-google-signin {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  border-radius: 30px;
+  border: 2px solid #ff33ff;
+  background: transparent;
+  color: #ff33ff;
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  box-shadow: 0 0 15px #ff33ff66;
+  filter: drop-shadow(0 0 5px #ff33ffbb);
+}
+
+.btn-google-signin:hover {
+  background: #ff33ff22;
+  box-shadow:
+    0 0 20px #ff33ffcc,
+    0 0 30px #ff00ffee;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.google-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  filter: drop-shadow(0 0 1px #fff);
+  transition: filter 0.3s ease;
+}
+
+.btn-google-signin:hover .google-icon {
+  filter: drop-shadow(0 0 5px #ff33ff);
+}
+
+.msg {
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-shadow: 0 0 8px #ff00ff88;
+  user-select: none;
+}
+
+.msg.error {
+  color: #ff4d4d;
+  text-shadow: 0 0 8px #ff000088;
+}
+
+.msg.success {
+  color: #7fff7f;
+  text-shadow: 0 0 12px #33ff33aa;
+}
+
+.redirect-text {
+  margin-top: 30px;
+  color: #aaaaffcc;
+  font-weight: 600;
+  user-select: none;
+}
+
+.redirect-link {
+  color: #ff33ff;
+  font-weight: 900;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.redirect-link:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 12px #ff00ff;
+}
